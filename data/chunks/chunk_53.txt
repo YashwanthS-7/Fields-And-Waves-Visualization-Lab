@@ -1,0 +1,1 @@
+∇⋅(A×B)=B⋅(∇×A)−A⋅(∇×B), and collect terms: Physical implication: Total power leaving a volume equals the rate of decrease of stored field energy minus Ohmic power dissipated.

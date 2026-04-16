@@ -1,0 +1,5 @@
+The characteristic impedance of a transmission line is defined as the ratio of the positively traveling voltage wave to the current wave at any point on the line.
+For a transmission line characterized by distributed parameters resistance R, inductance L, conductance G, and capacitance C, the characteristic impedance is given by:
+Characteristic impedance represents the impedance that a transmission line presents to a travelling wave. If the line is terminated in a load equal to Z₀, no reflections occur and all the incident power is absorbed by the load.
+When the load impedance ZL is equal to the characteristic impedance Z₀, the transmission line is said to be matched. In this case, the reflected wave is zero.
+© 2025 Fields and Waves Visualization Lab

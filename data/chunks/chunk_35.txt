@@ -1,1 +1,1 @@
-The cross-product of the vectors such as a × (b × c) and (a × b) × c is known as the vector triple product of a, b, c. For Vectors A,B and C, we define the vector triple product as Vector triple product is recognized as a vector quantity. a × (b × c) ≠ (a × b) × c which may remembered as the "bac - cab" rule. It should be noted that
+1. The Differential elements in spherical coordinates can be found as: 2. The Differential normal surface area is

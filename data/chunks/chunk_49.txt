@@ -1,0 +1,1 @@
+Vector subtraction is the process of finding a new vector by taking away the components of one vector from the corresponding components of another vector. Vector subtraction is similarly carried as The three basic laws of algebra obeyed by any given vectors A, B, and C, summarized as follows:

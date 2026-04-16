@@ -1,1 +1,1 @@
-Tip: switch to Lossy and increase α to see the envelope decay. Adjust θη to see why ⟨S⟩ scales with cos θη.
+Phase velocity is independent of frequency 3) Lossy Transmission Line (General Case) The transmission line considered in general has imperfect conductors and a lossy dielectric: Propagation constant and characteristic impedance: Physical implication: Since the attenuation constant

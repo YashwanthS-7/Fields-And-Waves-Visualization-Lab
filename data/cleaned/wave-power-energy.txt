@@ -1,6 +1,2 @@
 ∇⋅(A×B)=B⋅(∇×A)−A⋅(∇×B), and collect terms:
-S=E×H. RHS: decrease of stored energy densities
-Total power leaving a volume equals the rate of decrease of stored field energy minus Ohmic power dissipated.
-Instantaneous power density (W/m²). For time-harmonic fields:
-Adjust E₀, f, α, |η|, θη, and σ. Green = instantaneous
-Tip: switch to Lossy and increase α to see the envelope decay. Adjust θη to see why ⟨S⟩ scales with cos θη.
+Physical implication: Total power leaving a volume equals the rate of decrease of stored field energy minus Ohmic power dissipated.

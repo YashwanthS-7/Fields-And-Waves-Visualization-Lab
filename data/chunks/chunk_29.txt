@@ -1,1 +1,1 @@
-1. The Differential elements in spherical coordinates can be found as: 2. The Differential normal surface area is
+A vector V has both magnitude and direction. The magnitude of V is a scalar written as V or |V|. A unit vector **v** along V is defined as a vector whose magnitude is unity (i.e., 1) and its direction is along V, that is: A vector V in Cartesian (or rectangular) coordinates may be represented as: A unit vector is a vector with magnitude 1

@@ -1,0 +1,1 @@
+Resultant Vector: + 3.00 î + 3.00 ĵ + 3.00 k̂ Two Vectors A and B can be added together to give another vector C; that is Vector addition is the process of combining two or more vectors to create a new vector called the resultant vector. The vector addition is carried out component by component. Thus, if Resultant Vector: + 1.00 î + 1.00 ĵ + 1.00 k̂

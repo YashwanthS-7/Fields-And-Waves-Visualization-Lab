@@ -1,1 +1,1 @@
-Electric flux is defined as the total number of electric lines of force emanating from a charged body. An electric field is represented by electric flux. We can write the Electric Flux Density Ψ in terms of D Electric Flux Density is measured in coulombs per square meter. The electric flux density is also called as Electric displacement. For a volume charge distributions, eqs are
+Electric flux lines, also known as electric field lines, visually represent the direction and strength of an electric field in space.

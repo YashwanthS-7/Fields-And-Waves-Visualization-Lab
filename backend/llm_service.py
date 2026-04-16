@@ -114,23 +114,58 @@ TOPIC_TO_PATH = {
 }
 
 
-def get_topic_link(topic: str) -> str | None:
+def normalize_text(text: str) -> str:
+    return re.sub(r"[^a-z0-9 ]+", " ", text.lower()).strip()
+
+
+def normalize_topic_key(topic: str | None) -> str | None:
     if not topic:
         return None
 
-    slug = TOPIC_TO_PATH.get(topic.lower())
+    normalized = normalize_text(topic)
+    normalized = re.sub(r"\s+", " ", normalized)
+
+    alias_map = {
+        "faradays law": "faraday law",
+        "faraday s law": "faraday law",
+        "faraday law": "faraday law",
+        "faraday s": "faraday law",
+        "smithchart": "smith chart",
+        "smith chart": "smith chart",
+        "ampere s law": "ampere law",
+        "amperes law": "ampere law",
+        "displacement current": "displacement current",
+    }
+
+    for key, value in alias_map.items():
+        if normalized == key or key in normalized:
+            return value
+
+    return normalized
+
+
+def get_topic_link(topic: str) -> str | None:
+    topic_key = normalize_topic_key(topic)
+    if not topic_key:
+        return None
+
+    slug = TOPIC_TO_PATH.get(topic_key)
     if not slug:
         return None
 
-    return f"<a href=\"{SITE_BASE_URL}{slug}\" target=\"_blank\" rel=\"noopener noreferrer\">{topic}</a>"
+    return f"<a href=\"{SITE_BASE_URL}{slug}\" target=\"_blank\" rel=\"noopener noreferrer\">{topic_key.title()}</a>"
 
 
 def infer_topic_from_text(text: str) -> str | None:
     if not text:
         return None
 
-    normalized = re.sub(r"[^a-z0-9 ]+", " ", text.lower()).strip()
-    # Match more specific topics first
+    normalized = normalize_text(text)
+    normalized = re.sub(r"\s+", " ", normalized)
+    topic_key = normalize_topic_key(normalized)
+    if topic_key in TOPIC_TO_PATH:
+        return topic_key
+
     for topic in sorted(TOPIC_TO_PATH.keys(), key=len, reverse=True):
         if topic in normalized:
             return topic
@@ -247,15 +282,13 @@ def generate_explanation(context: str, question: str, session_id: str = "anonymo
         # -------------------------------------------------
         # Update conversation memory safely
         # -------------------------------------------------
-        if "To learn more, visit:" in final_answer:
-            state["last_bot_explanation"] = final_answer
-            # Extract subtopic name (best-effort)
-            try:
-                state["current_subtopic"] = final_answer.split("visit:")[-1].strip()
-            except:
-                pass
-        elif inferred_topic:
+        if inferred_topic:
             state["current_subtopic"] = inferred_topic
+        elif "To learn more, visit:" in final_answer:
+            state["last_bot_explanation"] = final_answer
+            inferred_from_answer = infer_topic_from_text(final_answer.split("visit:")[-1])
+            if inferred_from_answer:
+                state["current_subtopic"] = inferred_from_answer
 
         return append_area_and_topic(final_answer, state["current_subtopic"])
 
