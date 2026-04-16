@@ -21,7 +21,7 @@ def load_index():
         with open(META_PATH, "rb") as f:
             texts = pickle.load(f)
 
-def get_answer(question: str, top_k=3):
+def get_answer(question: str, session_id: str = "anonymous", top_k=5):
     load_index()
 
     query_vector = embedder.encode([question])
